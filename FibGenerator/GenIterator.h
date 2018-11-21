@@ -11,10 +11,10 @@ private:
 
 public:
 	GenIterator():a_(0), b_(1) {}
-	GenIterator(const size_t& k) {
+	GenIterator(size_t k) {
 		long long a = 0;
 		long long b = 1;
-		for (size_t i = 0; i < k - 1; i++) {
+		for (size_t i = 0; i < k - 1; ++i) {
 			long long c = b;
 			b += a;
 			a = c;
@@ -26,7 +26,7 @@ public:
 	~GenIterator() {}
 
 	GenIterator& operator++() {
-		this->move_to_the_next_element_();
+		move_to_the_next_element_();
 		return *this;
 	}
 
